@@ -1,0 +1,21 @@
+.shopping-list-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 8px 0;
+}
+
+.item-text {
+  flex: 1;
+  padding-right: 32px; /* space between text and button */
+}
+
+.remove-btn {
+  /* Optionally, make the button invisible until hover */
+  opacity: 0.7;
+  transition: opacity 0.2s;
+}
+
+.shopping-list-item:hover .remove-btn {
+  opacity: 1;
+}
