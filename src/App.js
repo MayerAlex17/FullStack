@@ -1,9 +1,20 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react'; // <-- Add useEffect
 import AddItemForm from './AddItemForm';
 import ShoppingList from './ShoppingList';
 
 function App() {
   const [items, setItems] = useState([]);
+
+  // Load items from localStorage on mount
+  useEffect(() => {
+    const saved = localStorage.getItem('shoppingList');
+    if (saved) setItems(JSON.parse(saved));
+  }, []);
+
+  // Save items to localStorage whenever items change
+  useEffect(() => {
+    localStorage.setItem('shoppingList', JSON.stringify(items));
+  }, [items]);
 
   const addItem = (text) => {
     setItems([...items, { id: Date.now(), text }]);
