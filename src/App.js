@@ -14,10 +14,12 @@ function App() {
   };
 
   return (
-    <div className="min-h-screen bg-gray-100 p-6">
-      <h1 className="text-3xl font-bold mb-4">🛒 My Shopping List</h1>
-      <AddItemForm onAdd={addItem} />
-      <ShoppingList items={items} onRemove={removeItem} />
+    <div className="shopping-list-container">
+      <div className="shopping-list">
+        <h1 className="text-3xl font-bold mb-4 text-center">🛒 My Shopping List</h1>
+        <AddItemForm onAdd={addItem} />
+        <ShoppingList items={items} onRemove={removeItem} />
+      </div>
     </div>
   );
 }
