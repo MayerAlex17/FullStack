@@ -36,3 +36,11 @@
 .shopping-list-item:hover .remove-btn {
   opacity: 1;
 }
+
+.shopping-list-item:nth-child(even) {
+  background-color: #f7f7fa;
+}
+
+.shopping-list-item:nth-child(odd) {
+  background-color: #ffffff;
+}
